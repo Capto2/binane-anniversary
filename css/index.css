@@ -1,139 +1,259 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  header {
-    height: 10%;
-    text-align: center;
-  }
-  
-  header img {
-    width: 30%;
-    margin-top: -5%;
-  }
-  main div.container {
-    margin-bottom: 2rem;
-    background-color: #060427;
-    color: #fff;
-    border-radius: 0.5rem;
-    padding: 1.5rem 1rem;
-  }
-  main div.container h2 {
-    color: rgb(21, 21, 209);
-    margin-bottom: 2rem;
-  }
-  main div.container p.p {
-    justify-content: center;
-  }
-  p.center,
-  h3 {
-    margin-top: 2rem;
-    text-align: center;
-  }
-  button b {
-    color: white;
-    font-size: 1.2rem;
-    font-weight: 400;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  text-decoration: none;
+  box-sizing: border-box;
+  outline: none;
+  appearance: none;
+  user-select: none;
+  font-family: sans-serif, "Poppins", "Times New Roman", Times, serif;
+}
+
+body {
+  height: 100vh;
+}
+
+div.container {
+  padding: 0 5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+div.container img#img {
+  margin-top: -5%;
+  width: 35%;
+  display: block;
+  text-align: center;
+}
+
+div.container div.container-box {
+  margin-bottom: 2rem;
+  width: 80%;
+  background-color: #060427;
+  color: #fff;
+  border-radius: 1rem;
+  padding: 1.5rem 2rem;
+}
+p {
+  padding: 1rem 0;
+  font-size: 1rem;
+  line-break: auto;
+  line-height: 30px;
+}
+h2 {
+  text-transform: capitalize;
+  color: #7c7cd6;
+  padding: 1rem 0;
+  font-size: 2rem;
+  font-weight: 500;
+}
+ul {
+  margin: 0 2rem;
+}
+ul li {
+  padding: 1rem 0;
+}
+ul li span {
+  font-weight: 400;
+  text-transform: capitalize;
+}
+input{
+  cursor: pointer;
+}
+div.box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+div.box div.form{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+div.box div.form img{
+  width: 2rem;
+  height: 2rem;
+  margin-right: 10px;
+}
+div.box div.form span{
+  margin: 0px 6rem;
+  margin-top: 1rem;
+  font-size: 1.5rem;
+  color: #817a7a;
+  font-weight: 500;
+}
+div.box div.form div.input-group{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin: 2rem;
+}
+div.box div.form div.input{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+div.box div.form label{
+  text-transform: capitalize;
+  font-size: 1rem;
+  font-weight: 600;
+}
+div.box div.form div.input-group .input-box{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background-color: #fff;
+  border-radius: 5px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-right: 25px;
+  padding-left: 8px;
+  height: 3rem;
+  width: 20rem;
+}
+label {
+  text-transform: capitalize;
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 5px 0;
+}
+div.box div.form div.input-group .input-box input{
+  height: 3rem;
+  width: 20rem;
+  outline: none;
+  border: none;
+}
+div.box div.form div.input-address{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 5px 2px;
+}
+div.box div.form div.input-address input[type=text]{
+  width: 35vw;
+  height: 3rem;
+  border: none;
+  border-radius: 3px;
+  text-align: center;
+}
+div.box button {
+  background-color: #3486b6fb;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 1rem;
+  margin-top: 0.8rem;
+  text-transform: capitalize;
+  border-radius: 0.4rem;
+  cursor: pointer;
+}
+div.box a {
+  color: #3486b6fb;
+  font-weight: 600;
+  font-size: 1rem;
+  margin: 3rem 0;
+}
+div.ads {
+  display: flex;
+  flex-direction: column;
+  margin: 5px;
+  justify-content: center;
+  align-items: center;
+}
+div.ads div.ads-set {
+  display: flex;
+  flex-direction: row;
+  margin: 5px 2px;
+}
+div.ads div.ads-set div.ads-box {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #fff;
+  width: 16rem;
+  margin: 1px 4px;
+  color: #000;
+  font-size: 0.8rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  border-radius: 0.3rem;
+}
+div.ads div.ads-set div.ads-box img {
+  width: 2rem;
+  height: 1.6rem;
+  margin-right: 5px;
+}
+div.prompt-box{
+    display: flex;
+    flex-direction: column;
     align-items: center;
-  }
-  p.center b {
-    color: #7979e9;
-  }
-  div.pop-up img {
+    background: transparent;
+    position: absolute;
+    transform: translate(-50%, -50%) scale(0.0001);
+    padding: 2rem;
+}
+div.prompt-box-open{
+  visibility: visible;
+  transition: transform 0.4s, top 0.4s;
+  margin-top: 5%;
+  margin-left: 20%;
+  left: 30%;
+  top: 50%;
+  transform: translate(-50%, -50%) scale(.8);
+  background-color: #fff;
+}
+div.prompt-box img{
     width: 40%;
-    height: 15%;
-    background-color: #fff;
-  }
-  div.sppn {
-    display: none;
-    visibility: hidden;
-  }
-  div.pop-up {
-    text-align: center;
-    margin: 2%;
-    padding: 5%;
-    display: block;
-    display: none;
-  }
-  div.pop-up h2 {
-    text-align: center;
-    font-weight: 700;
-    font-size: xx-large;
+    height: 45vh;
+    margin: 15px 0;
+}
+div.prompt-box span{
     text-transform: capitalize;
-  }
-  div.pop-up label {
-    font-weight: 600;
-    font-size: 1.2rem;
-    text-transform: capitalize;
-  }
-  div.pop-up input.text {
-    width: 50%;
-    height: 2rem;
-    margin-top: 2rem;
-    display: inline;
-    border: none;
-    outline: none;
-  }
-  div.copy-link {
-    position: relative;
-    background-color: #fff;
+    font-size: 1rem;
+    font-weight: 500;
+    margin: 4px;
+}
+div.prompt-box div.form{
     display: flex;
-  }
-  div.copy-link input[text] {
-    color: #555;
-    border: none;
-    outline: none;
-  }
-  .copy-link {
-    --height: 36px;
-    text-align: center;
+    flex-direction: column;
+    align-items: flex-start;
+}
+div.prompt-box div.form input{
+    width: 50vw;
+    height: 2.5rem;
+    border: 1px solid #b4a8a8;
+    color: #000;
+}
+div.prompt-box div.form div.input-box{
     display: flex;
-    max-width: 50%;
-    margin-left: 25%;
-  }
-  .copy-link-input {
-    flex-grow: 1;
-    padding: 0 8px;
-    font-size: 14px;
-    border: 1px solid #cccccccc;
-    border-right: none;
-    outline: none;
-  }
-  .copy-link-input:hover {
-    background-color: #eeeeee;
-  }
-  .copy-link-button {
-    flex-shrink: 0;
-    width: var(--height);
-    height: var(--height);
-    display: flex;
+    flex-direction: row;
     align-items: center;
-    justify-content: center;
-    background-color: #ddd;
-    outline: none;
-    border: 1px solid #eeeeee;
+    margin: 1rem 0;
+    background-color: #fff;
+}
+div.prompt-box div.form div.input-box a span{
+  font-size: 1.4rem;
+  font-weight: 600;
+  padding: .4rem;
+}
+div.prompt-box div.form span{
+    text-transform: lowercase;
+}
+div.prompt-box button{
+    background-color: #187dc0;
+    padding: 10px;
+    width: 15%;
+    margin: 1px 0;
+    font-weight: 500;
     cursor: pointer;
-  }
-  .copy-link-button:hover {
-    background-color: #eeeeee;
-  }
-  input {
-    text-align: center;
-  }
-  div.ads-box{
-    width: 100%;
-    height: fit-content;
-    border-radius: 2px;
-    text-align: center;
-  }
-  div.ads-box img{
-    width: 20vw;
-    height: 4rem;
-    border-radius: 2px;
-    background-color: white;
-    display: inline;
-    text-align: center;
-    margin: 2px;
-  }
+    text-transform: capitalize;
+    border: none;
+    border-radius: .1rem;
+    color: #fff;
+    font-size: 1rem;
+}
